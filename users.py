@@ -28,6 +28,33 @@ import json
 #     all_users = load_json_db()
 #     return all_users
 
+
+
+
+# from fastapi import FastAPI
+# app=FastAPI()
+
+# @app.get("/add")
+# def add(first,second):
+#     return {
+#         "result":int(first)+int(second)
+#     }
+# @app.get("/sub")
+# def sub(first,second):
+#     return {
+#         "result":int(first)-int(second)
+#     }
+# @app.get("/div")
+# def div(first,second):
+#     return {
+#         "result":int(first)/int(second)
+#     }
+# @app.get("/mul")
+# def mul(first,second):
+#     return {
+#         "result":int(first)*int(second)
+#     }
+
 from fastapi import Body, FastAPI, HTTPException
 import json
 import os
@@ -116,3 +143,4 @@ def get_user(username: str):
         if username in user:
             return {username: user[username]}
     raise HTTPException(status_code=404, detail="Username not found")
+ 
